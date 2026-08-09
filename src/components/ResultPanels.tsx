@@ -1,10 +1,10 @@
 import type { AnalysisResult } from "@/lib/analysis";
 import { ArrowUpRight, Check, CircleAlert, FolderKanban, Sparkles, Target } from "lucide-react";
 
-const importanceStyle: Record<string, { label: string; color: string }> = {
-  critical: { label: "Critical", color: "#EF7C6B" },
-  important: { label: "Important", color: "#F2A93B" },
-  "nice-to-have": { label: "Nice to have", color: "#4FD1C5" },
+const importanceStyle: Record<string, { label: string; color: string; emoji: string }> = {
+  critical: { label: "Critical", color: "#EF7C6B", emoji: "🔴" },
+  important: { label: "Important", color: "#F2A93B", emoji: "🟠" },
+  "nice-to-have": { label: "Nice to have", color: "#4FD1C5", emoji: "🟢" },
 };
 
 export function MatchedSkills({ skills }: { skills: AnalysisResult["matchedSkills"] }) {
@@ -53,7 +53,7 @@ export function GapList({ gaps }: { gaps: AnalysisResult["gaps"] }) {
                   </span>
                 </div>
                 <span className="text-xs font-mono-num px-2 py-0.5 rounded-full shrink-0" style={{ color: style.color, border: `1px solid ${style.color}66` }}>
-                  {style.label}
+                  {style.emoji} {style.label}
                 </span>
               </div>
               <p className="text-sm mt-2 leading-relaxed">{g.why}</p>

@@ -197,6 +197,9 @@ export default function Home() {
               <div>
                 <p className="text-xs uppercase tracking-[0.18em] text-muted mb-2">AI assessment</p>
                 <p className="text-lg leading-relaxed">{result.headline}</p>
+                <p className="text-xs text-muted mt-3 leading-relaxed italic">
+                  Note: This analysis is for guidance only and does not guarantee job placement.
+                </p>
               </div>
             </div>
 

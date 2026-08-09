@@ -34,112 +34,134 @@ export async function POST(req: NextRequest) {
     if (useDemoMode) {
       // Demo mode: return sample analysis
       return NextResponse.json({
-        matchScore: 72,
-        headline: "You have a solid foundation with some key gaps to address. With focused effort on the missing skills, you could be job-ready in 3-4 weeks.",
+        matchScore: 78,
+        headline: "Strong technical foundation with a few key gaps. You're closer than you think — addressing the missing production skills could make you job-ready in 3-4 weeks.",
         matchedSkills: [
           {
-            skill: "JavaScript/TypeScript",
+            skill: "Python & ML Fundamentals",
             evidenceLevel: "strong",
-            evidence: "Multiple projects demonstrating full-stack development with modern frameworks"
+            evidence: "Built Crop Yield Prediction System with Scikit-learn achieving 87% accuracy, shows hands-on ML experience"
           },
           {
-            skill: "React & Frontend Development",
+            skill: "Pandas, NumPy, Scikit-learn",
             evidenceLevel: "strong",
-            evidence: "Built responsive web applications with React, including component architecture"
+            evidence: "Used in Crop Yield Prediction project for data processing and model training"
+          },
+          {
+            skill: "FastAPI & Backend Development",
+            evidenceLevel: "strong",
+            evidence: "Deployed FastAPI backend for Crop Yield app and EventSync platform with JWT authentication"
+          },
+          {
+            skill: "Full-Stack Development",
+            evidenceLevel: "strong",
+            evidence: "EventSync platform (Next.js + MongoDB + FastAPI) used by 200+ students, shows end-to-end capability"
+          },
+          {
+            skill: "REST APIs",
+            evidenceLevel: "strong",
+            evidence: "Built RESTful APIs for multiple projects including EventSync event management"
           },
           {
             skill: "Git & Version Control",
             evidenceLevel: "strong",
-            evidence: "GitHub profile shows consistent commits and collaborative projects"
+            evidence: "Active GitHub usage across multiple projects and hackathon participation"
           },
           {
-            skill: "Problem Solving",
-            evidenceLevel: "partial",
-            evidence: "Hackathon participation demonstrates ability to work under pressure"
+            skill: "Computer Vision (Bonus)",
+            evidenceLevel: "strong",
+            evidence: "YOLOv8 Food Detection project shows practical CV experience, directly matches bonus requirement"
           }
         ],
         gaps: [
           {
-            skill: "Cloud Deployment (AWS/Azure)",
+            skill: "Docker & Containerization",
             importance: "critical",
             evidenceLevel: "missing",
-            evidence: "No cloud deployment experience mentioned in resume",
-            why: "The role requires deploying and maintaining production applications on cloud infrastructure",
-            projectedLift: 12
-          },
-          {
-            skill: "Testing & CI/CD",
-            importance: "important",
-            evidenceLevel: "missing",
-            evidence: "No mention of unit tests, integration tests, or continuous deployment pipelines",
-            why: "Professional development requires automated testing and deployment practices",
-            projectedLift: 8
-          },
-          {
-            skill: "Database Design & SQL",
-            importance: "critical",
-            evidenceLevel: "partial",
-            evidence: "Basic database usage shown but no complex queries or schema design",
-            why: "Role involves designing efficient data models and writing optimized queries",
+            evidence: "No Docker experience mentioned in resume or projects",
+            why: "Role requires containerizing ML services for consistent deployment across environments",
             projectedLift: 10
           },
           {
-            skill: "API Design & RESTful Services",
+            skill: "Cloud Deployment (AWS/GCP/Azure)",
+            importance: "critical",
+            evidenceLevel: "missing",
+            evidence: "Projects deployed locally or basic hosting, no AWS/GCP/Azure experience shown",
+            why: "Position requires deploying and scaling ML models on cloud infrastructure",
+            projectedLift: 12
+          },
+          {
+            skill: "System Design for ML Services",
             importance: "important",
             evidenceLevel: "partial",
-            evidence: "Some API consumption but limited backend API development shown",
-            why: "Position requires building scalable backend services",
-            projectedLift: 7
+            evidence: "Built full-stack apps but no mention of distributed systems or scalability patterns",
+            why: "Role involves designing scalable ML pipelines that handle production traffic",
+            projectedLift: 8
+          },
+          {
+            skill: "Production ML Monitoring",
+            importance: "important",
+            evidenceLevel: "missing",
+            evidence: "ML models built and evaluated but no production monitoring, drift detection, or logging shown",
+            why: "Maintaining ML models in production requires monitoring performance degradation and data drift",
+            projectedLift: 6
           }
         ],
         projects: [
           {
-            title: "Full-Stack Task Management System",
-            outcome: "Build a production-ready task management app with cloud deployment, automated tests, and a well-designed database",
-            skills: ["Cloud Deployment", "CI/CD", "Database Design", "RESTful APIs", "Testing"],
+            title: "Production ML Service with Docker & AWS",
+            outcome: "Build and deploy a complete ML API service using Docker containers on AWS, with monitoring and CI/CD. Take your existing Crop Yield model (or similar) to production-grade deployment.",
+            skills: ["Docker", "AWS (EC2/ECS/Lambda)", "System Design", "ML Monitoring", "CI/CD"],
             effort: "2-3 weeks",
-            closesGaps: ["Cloud Deployment (AWS/Azure)", "Testing & CI/CD", "Database Design & SQL", "API Design & RESTful Services"]
+            closesGaps: ["Docker & Containerization", "Cloud Deployment (AWS/GCP/Azure)", "System Design for ML Services", "Production ML Monitoring"]
+          },
+          {
+            title: "Scalable Food Detection API",
+            outcome: "Containerize your YOLOv8 Food Detection model, deploy it as a scalable REST API on GCP/AWS with load balancing, and add performance monitoring. Document the architecture.",
+            skills: ["Docker", "Cloud Deployment", "Model Serving", "API Optimization", "Monitoring"],
+            effort: "2 weeks",
+            closesGaps: ["Docker & Containerization", "Cloud Deployment (AWS/GCP/Azure)", "Production ML Monitoring"]
           }
         ],
         roadmap: [
           {
             week: 1,
-            focus: "Database Design & Backend APIs",
+            focus: "Docker & Containerization Basics",
             tasks: [
-              "Design normalized database schema for task management (users, projects, tasks, tags)",
-              "Set up PostgreSQL database and write migrations",
-              "Build RESTful API endpoints with proper error handling",
-              "Implement authentication and authorization"
+              "Learn Docker fundamentals (images, containers, volumes, networks)",
+              "Dockerize your existing Crop Yield Prediction FastAPI app",
+              "Write Dockerfile with multi-stage builds for smaller images",
+              "Test locally with docker-compose for FastAPI + database"
             ]
           },
           {
             week: 2,
-            focus: "Testing & Quality Assurance",
+            focus: "AWS/GCP Deployment & Cloud Basics",
             tasks: [
-              "Write unit tests for API endpoints (aim for 80%+ coverage)",
-              "Add integration tests for critical user flows",
-              "Set up GitHub Actions for automated testing",
-              "Configure linting and code quality checks"
+              "Set up AWS free tier account (or GCP)",
+              "Deploy your Dockerized ML API to AWS EC2 or App Runner",
+              "Configure environment variables and secrets management",
+              "Set up basic monitoring with CloudWatch logs"
             ]
           },
           {
             week: 3,
-            focus: "Cloud Deployment & CI/CD",
+            focus: "System Design & Scalability",
             tasks: [
-              "Deploy backend to AWS/Heroku with PostgreSQL",
-              "Set up automated deployment pipeline",
-              "Configure environment variables and secrets",
-              "Monitor logs and set up basic error tracking"
+              "Add caching layer (Redis) for prediction results",
+              "Implement async task queue for batch predictions",
+              "Set up load balancer and auto-scaling",
+              "Document your architecture with diagrams"
             ]
           },
           {
             week: 4,
-            focus: "Polish & Documentation",
+            focus: "Production ML Best Practices",
             tasks: [
-              "Write comprehensive README with architecture decisions",
-              "Add API documentation (Swagger/Postman)",
-              "Create demo video showing deployment process",
-              "Update resume with specific technical achievements"
+              "Add model versioning and A/B testing capability",
+              "Set up monitoring dashboards (prediction latency, accuracy drift)",
+              "Implement CI/CD pipeline with GitHub Actions",
+              "Write comprehensive README with deployment guide and resume bullet points"
             ]
           }
         ]

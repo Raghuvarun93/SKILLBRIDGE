@@ -66,13 +66,6 @@ export default function Home() {
   return (
     <main className="min-h-screen px-6 py-14 md:py-20">
       <div className="max-w-3xl mx-auto">
-        {/* Demo Mode Banner */}
-        <div className="mb-6 rounded-xl border p-4 text-sm" style={{ borderColor: "#F2A93B", background: "#F2A93B15" }}>
-          <p className="text-center" style={{ color: "#F2A93B" }}>
-            ⚡ Demo Mode: Showing sample analysis results. Add OPENAI_API_KEY for live AI analysis.
-          </p>
-        </div>
-        
         {/* Hero */}
         <header className="mb-10">
           <p
